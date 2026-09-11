@@ -41,10 +41,10 @@ export default function RecentOrdersList() {
   }, []);
 
   return (
-    <div className="bg-gray-900 rounded-xl border border-gray-800 p-5">
+    <div className="glass-panel metallic-border p-5">
       <div className="flex items-center justify-between mb-4">
         <h3 className="font-semibold text-gray-100">Recent Orders</h3>
-        <Link href="/orders" className="text-sm text-blue-400 font-medium flex items-center gap-1 hover:underline">
+        <Link href="/orders" className="text-sm text-emerald-400 font-medium flex items-center gap-1 hover:underline">
           View All <ChevronRight className="w-3.5 h-3.5" />
         </Link>
       </div>
@@ -60,10 +60,10 @@ export default function RecentOrdersList() {
           <Link
             key={order.id}
             href={`/orders/${order.id}`}
-            className="flex items-center gap-3 py-3 px-2 -mx-2 rounded-lg hover:bg-gray-800/50 transition-colors"
+            className="flex items-center gap-3 py-3 px-3 -mx-3 rounded-lg hover:bg-white/5 border border-transparent hover:border-white/10 hover:shadow-lg transition-all duration-300 group"
           >
-            <div className="w-9 h-9 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
-              <Package className="w-4 h-4 text-blue-400" />
+            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 glow-text-emerald group-hover:bg-emerald-500/20 transition-all">
+              <Package className="w-4 h-4 text-emerald-400" />
             </div>
             <div className="min-w-0 flex-1">
               <p className="text-sm font-medium text-gray-100 truncate">
