@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: "Smart routing and assignment system",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"

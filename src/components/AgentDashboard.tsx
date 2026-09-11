@@ -71,13 +71,13 @@ export default function AgentDashboard() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-800 text-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="w-full md:w-auto">
           <h2 className="text-xl font-semibold mb-2">Select Agent View</h2>
           <select 
             value={selectedAgentId} 
             onChange={(e) => setSelectedAgentId(e.target.value)}
-            className="p-2 border rounded-md bg-white w-full md:w-64"
+            className="p-2 border border-gray-700 rounded-md bg-gray-800 text-gray-100 w-full md:w-64"
           >
             {agents.map(a => (
               <option key={a.id} value={a.id}>{a.name} ({a.availability})</option>
@@ -88,31 +88,31 @@ export default function AgentDashboard() {
         {selectedAgent && (
           <div className="flex gap-8 md:border-l md:pl-8 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
             <div>
-              <div className="text-sm text-gray-500 uppercase tracking-wide">Status</div>
-              <div className="font-semibold text-lg">{selectedAgent.availability}</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Status</div>
+              <div className="font-semibold text-lg text-gray-100">{selectedAgent.availability}</div>
             </div>
             <div>
-              <div className="text-sm text-gray-500 uppercase tracking-wide">Workload</div>
-              <div className="font-semibold text-lg">{selectedAgent.activeOrdersCount} active orders</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Workload</div>
+              <div className="font-semibold text-lg text-gray-100">{selectedAgent.activeOrdersCount} active orders</div>
             </div>
             <div>
-              <div className="text-sm text-gray-500 uppercase tracking-wide">Location</div>
-              <div className="font-mono text-sm mt-1">{selectedAgent.location.lat.toFixed(3)}, {selectedAgent.location.lng.toFixed(3)}</div>
+              <div className="text-sm text-gray-400 uppercase tracking-wide">Location</div>
+              <div className="font-mono text-sm mt-1 text-gray-100">{selectedAgent.location.lat.toFixed(3)}, {selectedAgent.location.lng.toFixed(3)}</div>
             </div>
           </div>
         )}
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <div className="bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-800 text-gray-100">
         <h3 className="text-xl font-semibold mb-6 flex justify-between items-center">
           Smart Route Sequence
-          <button onClick={fetchRoute} className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition">Refresh Route</button>
+          <button onClick={fetchRoute} className="text-sm bg-gray-800 hover:bg-gray-700 px-3 py-1 rounded transition text-gray-100">Refresh Route</button>
         </h3>
 
         {routeLoading ? (
-          <div className="text-center py-8 text-gray-500 animate-pulse">Calculating optimal route...</div>
+          <div className="text-center py-8 text-gray-400 animate-pulse">Calculating optimal route...</div>
         ) : agentRoute.length === 0 ? (
-          <div className="text-center py-8 text-gray-500 bg-gray-50 rounded border border-dashed">No active orders assigned to this agent.</div>
+          <div className="text-center py-8 text-gray-400 bg-gray-800/50 rounded border border-gray-700 border-dashed">No active orders assigned to this agent.</div>
         ) : (
           <div className="space-y-4 relative">
             <div className="absolute left-6 top-6 bottom-6 w-0.5 bg-gray-200 z-0 hidden md:block"></div>
@@ -121,14 +121,14 @@ export default function AgentDashboard() {
                 <div className="w-12 h-12 rounded-full bg-blue-100 border-4 border-white hidden md:flex items-center justify-center font-bold text-blue-600 shadow-sm shrink-0">
                   {index + 1}
                 </div>
-                <div className="flex-1 border rounded-md p-5 bg-white shadow-sm flex flex-col md:flex-row justify-between gap-4">
+                <div className="flex-1 border border-gray-700 rounded-md p-5 bg-gray-800 shadow-sm flex flex-col md:flex-row justify-between gap-4">
                   <div>
-                    <div className="font-semibold text-lg mb-1">{order.details}</div>
-                    <div className="text-sm text-gray-600 mb-2">
-                      <span className="font-medium text-gray-900">{order.customerName}</span> • {order.customerContact}
+                    <div className="font-semibold text-lg mb-1 text-gray-100">{order.details}</div>
+                    <div className="text-sm text-gray-400 mb-2">
+                      <span className="font-medium text-gray-200">{order.customerName}</span> • {order.customerContact}
                     </div>
-                    <div className="text-sm text-gray-500 bg-gray-50 inline-block px-2 py-1 rounded border mb-3">
-                      📍 {order.customerLocation.lat.toFixed(4)}, {order.customerLocation.lng.toFixed(4)}
+                    <div className="text-sm text-gray-400 bg-gray-900 inline-block px-2 py-1 rounded border border-gray-700 mb-3">
+                      📍 {order.address || `${order.customerLocation.lat.toFixed(4)}, ${order.customerLocation.lng.toFixed(4)}`}
                     </div>
                     <div className="flex gap-2">
                       <span className={`px-2 py-1 rounded text-xs font-medium ${

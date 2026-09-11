@@ -41,6 +41,7 @@ export const initialOrders: Order[] = [
     customerName: 'John Doe',
     customerContact: '555-0101',
     customerLocation: { lat: 40.7580, lng: -73.9855 }, // Times Square
+    address: 'Times Square, New York, NY',
     details: 'Pizza delivery',
     priority: 'High',
     status: 'Picked Up',
@@ -52,6 +53,7 @@ export const initialOrders: Order[] = [
     customerName: 'Jane Roe',
     customerContact: '555-0102',
     customerLocation: { lat: 40.7484, lng: -73.9857 }, // Empire State
+    address: 'Empire State Building, New York, NY',
     details: 'Documents',
     priority: 'Medium',
     status: 'In Transit',
@@ -63,6 +65,7 @@ export const initialOrders: Order[] = [
     customerName: 'Mike Ross',
     customerContact: '555-0103',
     customerLocation: { lat: 40.6892, lng: -74.0445 }, // Statue of Liberty
+    address: 'Statue of Liberty, New York, NY',
     details: 'Gift box',
     priority: 'Low',
     status: 'Assigned',

@@ -33,8 +33,8 @@ export default function DashboardPage() {
     <>
       <div className="flex items-start justify-between mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-100">Good Morning!</h1>
-          <p className="text-sm text-gray-400 mt-1">Here&apos;s what&apos;s happening with your deliveries today.</p>
+          <h1 className="text-2xl font-bold text-gray-900">Good Morning!</h1>
+          <p className="text-sm text-gray-500 mt-1">Here&apos;s what&apos;s happening with your deliveries today.</p>
         </div>
         <p className="text-sm text-gray-400 mt-1">{today}</p>
       </div>

@@ -73,22 +73,22 @@ export default function Dispatcher() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <div className="bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-800 text-gray-100">
         <h2 className="text-2xl font-semibold mb-6 flex justify-between items-center">
           Pending Orders
-          <button onClick={fetchOrders} className="text-sm bg-gray-100 hover:bg-gray-200 px-3 py-1 rounded transition">Refresh</button>
+          <button onClick={fetchOrders} className="text-sm bg-gray-800 hover:bg-gray-700 px-3 py-1 rounded transition text-gray-100">Refresh</button>
         </h2>
 
         {pendingOrders.length === 0 ? (
-          <p className="text-gray-500">No pending orders to assign.</p>
+          <p className="text-gray-400">No pending orders to assign.</p>
         ) : (
           <div className="space-y-4">
             {pendingOrders.map(order => (
-              <div key={order.id} className="border p-4 rounded-md flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-gray-50">
+              <div key={order.id} className="border border-gray-800 p-4 rounded-md flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-gray-800/50 text-gray-100">
                 <div>
-                  <div className="font-semibold text-lg">{order.details} <span className="text-sm font-normal text-gray-500">({order.id})</span></div>
-                  <div className="text-sm text-gray-600">Customer: {order.customerName} - {order.customerContact}</div>
-                  <div className="text-sm text-gray-600">Location: {order.customerLocation.lat.toFixed(4)}, {order.customerLocation.lng.toFixed(4)}</div>
+                  <div className="font-semibold text-lg">{order.details} <span className="text-sm font-normal text-gray-400">({order.id})</span></div>
+                  <div className="text-sm text-gray-400">Customer: {order.customerName} - {order.customerContact}</div>
+                  <div className="text-sm text-gray-400">Location: {order.address || `${order.customerLocation.lat.toFixed(4)}, ${order.customerLocation.lng.toFixed(4)}`}</div>
                   <div className="mt-2">
                     <span className={`px-2 py-1 text-xs rounded-full font-medium ${
                       order.priority === 'Urgent' ? 'bg-red-100 text-red-800' :
@@ -103,11 +103,11 @@ export default function Dispatcher() {
 
                 <div className="w-full md:w-auto">
                   {recommendation?.orderId === order.id ? (
-                    <div className="bg-white p-4 rounded border border-blue-200 shadow-sm max-w-sm">
+                    <div className="bg-gray-800 p-4 rounded border border-blue-500/30 shadow-sm max-w-sm text-gray-100">
                       {recommendation.result.recommendedAgentId ? (
                         <>
                           <div className="text-sm font-semibold mb-2">Recommendation Reasoning</div>
-                          <div className="text-xs text-gray-600 mb-4">{recommendation.result.reasoning}</div>
+                          <div className="text-xs text-gray-300 mb-4">{recommendation.result.reasoning}</div>
                           <button 
                             disabled={assigning}
                             onClick={() => handleAssign(order.id, recommendation.result.recommendedAgentId!)}
@@ -137,29 +137,29 @@ export default function Dispatcher() {
         )}
       </div>
 
-      <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+      <div className="bg-gray-900 p-6 rounded-xl shadow-sm border border-gray-800 text-gray-100">
         <h2 className="text-2xl font-semibold mb-4">All Orders Tracker</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm text-left">
-            <thead className="bg-gray-50 border-b">
+            <thead className="bg-gray-800/50 border-b border-gray-800">
               <tr>
-                <th className="px-4 py-3 font-medium text-gray-900">ID</th>
-                <th className="px-4 py-3 font-medium text-gray-900">Details</th>
-                <th className="px-4 py-3 font-medium text-gray-900">Priority</th>
-                <th className="px-4 py-3 font-medium text-gray-900">Status</th>
-                <th className="px-4 py-3 font-medium text-gray-900">Agent</th>
+                <th className="px-4 py-3 font-medium text-gray-100">ID</th>
+                <th className="px-4 py-3 font-medium text-gray-100">Details</th>
+                <th className="px-4 py-3 font-medium text-gray-100">Priority</th>
+                <th className="px-4 py-3 font-medium text-gray-100">Status</th>
+                <th className="px-4 py-3 font-medium text-gray-100">Agent</th>
               </tr>
             </thead>
             <tbody className="divide-y">
               {orders.map(order => (
-                <tr key={order.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-mono text-xs text-gray-500">{order.id}</td>
-                  <td className="px-4 py-3 font-medium">{order.details}</td>
-                  <td className="px-4 py-3">{order.priority}</td>
+                <tr key={order.id} className="hover:bg-gray-800 border-gray-800">
+                  <td className="px-4 py-3 font-mono text-xs text-gray-400">{order.id}</td>
+                  <td className="px-4 py-3 font-medium text-gray-200">{order.details}</td>
+                  <td className="px-4 py-3 text-gray-300">{order.priority}</td>
                   <td className="px-4 py-3">
-                    <span className="px-2 py-1 bg-gray-100 rounded-full text-xs font-medium">{order.status}</span>
+                    <span className="px-2 py-1 bg-gray-800 rounded-full text-xs font-medium text-gray-300">{order.status}</span>
                   </td>
-                  <td className="px-4 py-3 text-gray-600">{order.assignedAgentId || '-'}</td>
+                  <td className="px-4 py-3 text-gray-400">{order.assignedAgentId || '-'}</td>
                 </tr>
               ))}
             </tbody>

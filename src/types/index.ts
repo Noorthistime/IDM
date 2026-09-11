@@ -12,6 +12,7 @@ export interface Order {
   customerName: string;
   customerContact: string;
   customerLocation: Location;
+  address: string;
   details: string;
   priority: Priority;
   status: DeliveryStatus;

@@ -14,10 +14,11 @@ export class OrderService {
     customerName: string;
     customerContact: string;
     customerLocation: Location;
+    address: string;
     details: string;
     priority: Priority;
   }): Order {
-    if (!data.customerName || !data.customerContact || !data.customerLocation || !data.details || !data.priority) {
+    if (!data.customerName || !data.customerContact || !data.customerLocation || !data.details || !data.priority || !data.address) {
       throw new Error("Missing required fields");
     }
 
@@ -32,6 +33,7 @@ export class OrderService {
       customerName: data.customerName,
       customerContact: data.customerContact,
       customerLocation: data.customerLocation,
+      address: data.address,
       details: data.details,
       priority: data.priority,
       status: 'Pending',
