@@ -22,7 +22,8 @@ export default function QuickActionCard({
   href,
 }: QuickActionCardProps) {
   return (
-    <div className="bg-gray-900 rounded-xl border border-gray-800 p-6">
+    <div className="glass-panel metallic-border p-6 hover:shadow-[0_0_25px_rgba(16,185,129,0.1)] transition-all duration-300 relative overflow-hidden group">
+      <div className="absolute -right-10 -top-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all duration-500"></div>
       <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${iconBg}`}>
         {icon}
       </div>

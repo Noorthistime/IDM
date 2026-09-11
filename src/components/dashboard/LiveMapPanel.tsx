@@ -8,11 +8,11 @@ const SystemMap = dynamic(() => import("../SystemMap"), { ssr: false, loading: (
 
 export default function LiveMapPanel() {
   return (
-    <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 flex flex-col">
+    <div className="glass-panel metallic-border p-5 flex flex-col">
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-green-500" />
-          <h3 className="font-semibold text-gray-100">Live Map</h3>
+          <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+          <h3 className="font-semibold text-gray-100 glow-text-emerald">Live Map</h3>
           <span className="text-xs text-gray-500 ml-1">Real-time agent and order locations</span>
         </div>
         <Link href="/live-map" className="text-sm text-blue-400 font-medium flex items-center gap-1 hover:underline shrink-0">

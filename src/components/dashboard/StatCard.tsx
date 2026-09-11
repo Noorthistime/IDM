@@ -11,7 +11,7 @@ interface StatCardProps {
 
 export default function StatCard({ icon, iconBg, label, value, change, changeLabel }: StatCardProps) {
   return (
-    <div className="bg-gray-900 rounded-xl border border-gray-800 p-5 flex items-center gap-4">
+    <div className="glass-panel metallic-border p-5 flex items-center gap-4 hover:shadow-[0_0_20px_rgba(16,185,129,0.05)] transition-all duration-300">
       <div className={`w-11 h-11 rounded-lg flex items-center justify-center shrink-0 ${iconBg}`}>
         {icon}
       </div>
