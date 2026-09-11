@@ -41,56 +41,56 @@ export default function DashboardPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
         <QuickActionCard
-          icon={<Package className="w-6 h-6 text-blue-600" />}
-          iconBg="bg-blue-50"
+          icon={<Package className="w-6 h-6 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           title="Create New Order"
           description="Add a new delivery with location, package details and priority."
           ctaLabel="Create Order"
-          ctaBg="bg-blue-600"
+          ctaBg="bg-emerald-600 hover:bg-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]"
           href="/orders"
         />
         <QuickActionCard
-          icon={<Users className="w-6 h-6 text-green-600" />}
-          iconBg="bg-green-50"
+          icon={<Users className="w-6 h-6 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           title="Register New Agent"
           description="Add a delivery agent with availability and current location."
           ctaLabel="Register Agent"
-          ctaBg="bg-green-600"
+          ctaBg="bg-emerald-600 hover:bg-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]"
           href="/agents"
         />
         <QuickActionCard
-          icon={<Zap className="w-6 h-6 text-purple-600" />}
-          iconBg="bg-purple-50"
+          icon={<Zap className="w-6 h-6 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           title="Live Tracking"
           description="View all orders and agents on the map in real time."
           ctaLabel="Open Live Map"
-          ctaBg="bg-purple-600"
+          ctaBg="bg-emerald-600 hover:bg-emerald-500 hover:shadow-[0_0_15px_rgba(16,185,129,0.4)]"
           href="/live-map"
         />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <StatCard
-          icon={<Package className="w-5 h-5 text-blue-600" />}
-          iconBg="bg-blue-50"
+          icon={<Package className="w-5 h-5 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           label="Total Orders"
           value={totalOrders}
         />
         <StatCard
-          icon={<Clock className="w-5 h-5 text-amber-600" />}
-          iconBg="bg-amber-50"
+          icon={<Clock className="w-5 h-5 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           label="Pending Orders"
           value={pendingOrders}
         />
         <StatCard
-          icon={<UserCheck className="w-5 h-5 text-green-600" />}
-          iconBg="bg-green-50"
+          icon={<UserCheck className="w-5 h-5 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           label="Available Agents"
           value={`${availableAgents} / ${agents.length}`}
         />
         <StatCard
-          icon={<CheckCircle2 className="w-5 h-5 text-indigo-600" />}
-          iconBg="bg-indigo-50"
+          icon={<CheckCircle2 className="w-5 h-5 text-emerald-400 glow-text-emerald" />}
+          iconBg="bg-emerald-500/10 border border-emerald-500/20"
           label="Delivered Orders"
           value={deliveredOrders}
         />

@@ -16,7 +16,7 @@ const createIcon = (color: string) => {
   });
 };
 
-const agentIcon = createIcon('#3b82f6'); // Blue for agents
+const agentIcon = createIcon('#10B981'); // Emerald for agents
 const orderIcon = createIcon('#ef4444'); // Red for orders
 
 export default function SystemMap() {
