@@ -17,10 +17,10 @@ export default function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="w-64 shrink-0 border-r border-gray-800 bg-gray-900 flex flex-col h-screen sticky top-0">
+    <aside className="w-64 shrink-0 glass-panel metallic-border border-r-0 flex flex-col h-screen sticky top-0 relative z-10">
       <div className="flex items-center gap-2 px-6 py-6">
-        <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center">
-          <Box className="w-5 h-5 text-white" />
+        <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center glow-text-emerald">
+          <Box className="w-5 h-5 text-emerald-400" />
         </div>
         <div>
           <p className="font-bold text-gray-100 leading-none">IDM</p>
@@ -35,10 +35,10 @@ export default function Sidebar() {
             <Link
               key={href}
               href={href}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
                 active
-                  ? "bg-blue-500/10 text-blue-400"
-                  : "text-gray-400 hover:bg-gray-800 hover:text-gray-200"
+                  ? "bg-emerald-500/15 text-emerald-400 border border-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.1)]"
+                  : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
               }`}
             >
               <Icon className="w-[18px] h-[18px]" />
